@@ -61,8 +61,13 @@ ul {
 a {
   text-decoration: none;
 }
+
 .header {
   border-bottom: 1px solid #e7e9fc;
+  background: #fff;
+  box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 2px 1px 0px rgba(46, 47, 66, 0.08);
 }
 
 .header-nav {
@@ -73,7 +78,6 @@ a {
 .header-logo {
   margin-right: 76px;
   display: flex;
-  align-items: center;
   color: #4d5ae5;
   font-family: "Raleway", sans-serif;
   font-size: 18px;
@@ -99,7 +103,7 @@ a {
   gap: 40px;
 }
 
-.header-item {
+.header-menu-link {
   color: #2e2f42;
   font-weight: 500;
   line-height: 1.5;
@@ -109,9 +113,11 @@ a {
   display: block;
 }
 
-.header-item:hover,
-.header-item:focus {
+.header-menu-link:hover,
+.header-menu-link:focus {
   color: #404bbf;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-container {
@@ -145,6 +151,15 @@ a {
 
 .hero {
   background-color: #2e2f42;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/peopleoffice.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   padding-top: 188px;
   padding-bottom: 188px;
 }
@@ -186,6 +201,8 @@ a {
 .btn-order:focus,
 .btn-order:hover {
   background-color: #404bbf;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* FEATURES */
@@ -199,6 +216,18 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
+}
+
+.svg-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid #8e8f99;
+  background: #f4f4fd;
+  width: 100%;
+  height: 112px;
+  margin-bottom: 8px;
 }
 
 .features-item {
@@ -248,14 +277,17 @@ a {
   background-color: #fff;
   border-radius: 0px 0px 4px 4px;
   flex-basis: calc((100% - 3 * 24px) / 4);
+  border-radius: 0px 0px 4px 4px;
+  background: var(--WHITE, #fff);
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
 .employees-info {
   padding: 32px 0;
 }
 
-.employees-img {
-}
 .employees-name {
   text-align: center;
   margin-bottom: 8px;
@@ -266,16 +298,36 @@ a {
   letter-spacing: 0.02em;
 }
 
-.employees-item:first-child {
-}
-
-.employees-item:last-child {
-}
-
 .employees-position {
   text-align: center;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  margin-bottom: 8px;
+}
+.container-blue {
+  border-radius: 50px;
+  background-color: #4d5ae5;
+}
+.container-svg {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+.soc-network-link:hover {
+  background-color: #404bbf;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.soc-network-link {
+  display: flex;
+  background-color: #4d5ae5;
+  fill: #f4f4fd;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
 }
 
 /* OUR PORTFOLIO */
@@ -302,7 +354,20 @@ a {
 .benefits-item {
   background: #fff;
   width: calc((100% - 24px * 2) / 3);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+.benefits-item:hover {
+  border: 1px solid #f4f4fd;
+  background: #fff;
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+}
+.benefits-item:hover .benefits-cover-text {
+  transform: translateY(0);
+}
+
 .benefits-title {
   margin-bottom: 72px;
   color: #2e2f42;
@@ -314,7 +379,25 @@ a {
   text-align: center;
 }
 
-.benefits-img {
+.benefits-cover-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.benefits-cover-text {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  color: #f4f4fd;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  padding: 40px 32px 164px 32px;
+  background: #4d5ae5;
+  transform: translateY(100%);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .benefits-subtitle {
@@ -338,6 +421,14 @@ a {
 .footer {
   background: #2e2f42;
   padding: 100px 0;
+}
+
+.container-footer {
+  display: flex;
+  align-items: baseline;
+}
+.footer-info {
+  margin-right: 120px;
 }
 
 .footer-logo {
@@ -368,4 +459,32 @@ a {
   line-height: 1.5;
   letter-spacing: 0.02em;
   max-width: 264px;
+}
+
+.container-footer-svg {
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-svg {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+}
+
+.footer-svg {
+  display: flex;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-svg-list :hover {
+  background-color: #31d0aa;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
