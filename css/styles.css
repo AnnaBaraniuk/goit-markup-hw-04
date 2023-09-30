@@ -449,6 +449,7 @@ a {
   align-items: baseline;
 }
 .footer-info {
+  margin-right: 120px;
 }
 
 .footer-logo {
@@ -485,7 +486,6 @@ a {
   display: block;
   align-items: center;
   justify-content: center;
-  margin-right: 120px;
 }
 
 .title-svg {
